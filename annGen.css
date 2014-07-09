@@ -1,0 +1,12 @@
+@media screen {
+	body {
+	background-color:#ccc;
+	}
+}
+@media print {
+	body {
+		background-color:red;
+		font:1.5em Georgia, sans serif;
+		
+	}
+}
