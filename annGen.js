@@ -44,8 +44,8 @@ $(function () {
 			navMarkers.push($(this).val());
 			});
 	var level = $(".level option").filter(":selected").val();
-	var refNotes = $("input[type=radio]").filter(".refNotes").val();
-	var refNotesIncl = $("input[type=radio]").filter(".refNotesIncl").val();
+	var refNotes = $("input[name=notes]").filter(":checked").val();
+	var refNotesIncl = $("input[name=notes2]").filter(":checked").val();
 	var refNotesLoc = $(".refNotesLoc option").filter(":selected").val();
 	$("p.title").text(title + ", " + "DBC" + DBC);
 	$("p.author").text("By " + authorFirst + " " + authorLast);
@@ -58,11 +58,18 @@ $(function () {
 	$(".markers > span").text(x);
 	$(".markers span:nth-child(2)").text(level);
 	if(ToC == "no") {$(".ToC span").hide()};
-	if(refNotes == "no") {$(".incl").hide();
-	} else {
-			$(".none").hide();
-			$(".incl span").text(refNotesLoc);
-			}
+    alert(refNotes + "," + refNotesIncl);
+
+//	if(refNotes=="no") {
+//        $(".incl").hide();
+//        $(".none").hide();
+//    }
+//    if(refNotes=="yes" && refNotesIncl && refNotesIncl === "no") {
+//        $(".incl").hide();
+//    }
+//    if(refNotesIncl == "yes"){
+//        $(".incl span").text(refNotesLoc);
+//    }
 	$("p.endof").text("End of " + title);
 	spellOut(authorFirst);
 	spellOut(authorLast);

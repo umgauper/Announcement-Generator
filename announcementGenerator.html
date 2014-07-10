@@ -5,10 +5,10 @@
 	<link href=annGen.css rel=stylesheet>
 </head>
 <body>
-	<header>
-		<h2>Announcement Sheet Generator</h2>
-	</header>
 		<div id="input">
+            <header>
+                <h2>Announcement Sheet Generator</h2>
+            </header>
 			<form id="inputForm">
 				<h4>Title:</h4>
 					<input class="title" type=text placeholder=Title>
@@ -57,8 +57,8 @@
 						<input class="refNotes no" type=radio name="notes" value=no>No
 				<div class=refNotesIncl>
 					<p>Are the reference notes included in the recording?</p>
-						<input class="refNotesIncl yes" type=radio name="notes2" value=yes>Yes
-						<input class="refNotesIncl no" type=radio name="notes2" value=no>No
+						<input class="a yes" type=radio name="notes2" value=yes>Yes
+						<input class="a no" type=radio name="notes2" value=no>No
 				</div>
 				<div class=refNotesLoc>
 					<p>Where are the reference notes located in the recording?</p>
@@ -83,9 +83,8 @@
 			<button>Generate Announcement Sheets</button>
 		</div><!--end input-->
 		<div id="output">
-			<div class=opening>
 				<h2>Opening Announcements</h2>
-				<hr>
+            <div class=opening>
 				<p class="title DBC"></p>
 				<p class=author></p>
 				<p class=copyright></p>
@@ -99,9 +98,8 @@
 				or at the 2nd  beep</span> to locate the beginning of the book.</p>  
 				<p class="reference none">The reference notes found in the print edition are not included in this recording.</p>
 				<p class="reference incl">The reference notes found in the print edition have been grouped together in this recording and read <span></span>.</p>
-				<h2>Closing Announcements</h2>
-				<hr>
-			</div><!--end opening-->	
+			</div><!--end opening-->
+            <h2>Closing Announcements</h2>
 			<div class=closing>
 				<p class=endof></p>
 				<p class=author></p>

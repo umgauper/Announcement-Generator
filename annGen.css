@@ -1,12 +1,33 @@
 @media screen {
-	body {
-	background-color:#ccc;
-	}
+    body {
+
+        font-family:Courier new, monospace;
+    }
+    div.opening, div.closing {
+        background-color: white;
+        padding:25px 100px 50px;
+
+    }
+    #output p {
+        width:1000px;
+        background-color:white;
+        text-align:justify;
+    }
+    h2 {
+        width:575px;
+        margin-left:340px;
+        color:black;
+        letter-spacing:10px;
+
+
+    }
+
+
+
+
 }
 @media print {
-	body {
-		background-color:red;
-		font:1.5em Georgia, sans serif;
-		
-	}
+    body {
+        font:12pt Courier new, serif;
+    }
 }
