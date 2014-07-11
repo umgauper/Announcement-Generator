@@ -2,13 +2,14 @@ $(function () {
 	$("#output").hide();
 	$(".refNotesIncl").hide();
 	$(".refNotesLoc").hide();
+    $(".right").hide();
 	$("input[type=radio]").filter(".refNotes.yes").on('click', function() {
 		$(".refNotesIncl").fadeIn('fast');
 		});
 	$("input[type=radio]").filter(".refNotes.no").on('click', function() {
 		$(".refNotesIncl").fadeOut('fast');
 		});
-	$("input[type=radio]").filter(".refNotesIncl.yes").on('click', function() {
+	$("input[type=radio]").filter(".a.yes").on('click', function() {
 		$(".refNotesLoc").fadeIn('fast');
 		});
 	$("input[type=radio]").filter(".refNotesIncl.no").on('click', function() {
@@ -22,9 +23,14 @@ $(function () {
 			}
 		authorSpelled += name.charAt(name.length-1).toUpperCase() + "  ";
 		}
-	
-	$("button").on('click', function() {
-	/* stored values in variables even though some may be only used once, to make code more readable */
+	$("#next").on('click', function() {
+        $(".left").toggle("slide");
+        $(".right").css("display", "inline");
+        $(".right").show("slide", { direction: "left" }, 'slow');
+    });
+	$(".submit").on('click', function() {
+	/* stored values in variables even though some may be only used once, to make code more readable
+	* there has to be a better way to do this....*/
 	var title=$(".title").val();
 	var DBC=$(".DBC").val();
 	var authorFirst=$(".author.firstname").val();
@@ -53,23 +59,27 @@ $(function () {
 	$("p.narrator").text("Narrated by " + narratorFirst + " " + narratorLast);
 	$(".pages span").text(pages);
 	$(".readingTime span").text(hours + " hours " + minutes + " minutes");
-	var x = ""; 
-	for(var i=0; i<navMarkers.length; i++) { x = x + navMarkers[i] + ", "};
+	var x = "";
+    if(navMarkers.length > 0) {
+        for (var i = 0; i < navMarkers.length; i++) {
+            x = x + navMarkers[i] + ", "
+        }
+        x+="and";
+    }
 	$(".markers > span").text(x);
 	$(".markers span:nth-child(2)").text(level);
-	if(ToC == "no") {$(".ToC span").hide()};
-    alert(refNotes + "," + refNotesIncl);
-
-//	if(refNotes=="no") {
-//        $(".incl").hide();
-//        $(".none").hide();
-//    }
-//    if(refNotes=="yes" && refNotesIncl && refNotesIncl === "no") {
-//        $(".incl").hide();
-//    }
-//    if(refNotesIncl == "yes"){
-//        $(".incl span").text(refNotesLoc);
-//    }
+	if(ToC == "no") {$(".ToC span").hide()}
+	if(refNotes=="no") {
+        $(".incl").hide();
+        $(".none").hide();
+    }
+    if(refNotes=="yes" && refNotesIncl && refNotesIncl == "no") {
+        $(".incl").hide();
+    }
+    if(refNotesIncl == "yes"){
+        $(".none").hide();
+        $(".incl span").text(refNotesLoc);
+    }
 	$("p.endof").text("End of " + title);
 	spellOut(authorFirst);
 	spellOut(authorLast);
@@ -78,8 +88,4 @@ $(function () {
 	$("#input").remove();
 	$("#output").fadeIn('fast');
 		});
-	
-	
-
-
 })()

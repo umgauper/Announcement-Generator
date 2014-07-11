@@ -1,4 +1,7 @@
 @media screen {
+    p#silence {
+        font-style:italic;
+    }
     body {
 
         font-family:Courier new, monospace;
@@ -6,25 +9,61 @@
     div.opening, div.closing {
         background-color: white;
         padding:25px 100px 50px;
-
+    }
+    .column {
+        width:450px;
+        height:750px;
+        padding:10px;
+        display:inline-flex;
+    }
+    .right {
+        display: none;
+        position:absolute;
     }
     #output p {
         width:1000px;
         background-color:white;
         text-align:justify;
     }
+    #next {
+        height: 20px;
+    }
     h2 {
         width:575px;
         margin-left:340px;
         color:black;
         letter-spacing:10px;
-
-
+    }
+    input[type='checkbox'] {
+        float:left;
+    }
+   button.submit {
+       position:absolute;
+       top:800px;
+       left:600px;
+       background: #c21818;
+        background: #c21818;
+        background-image: -webkit-linear-gradient(top, #AA1414, #BC1616, #ce0404, #BC1616, #AA1414);
+        background-image: -moz-linear-gradient(top, #AA1414, #BC1616, #ce0404, #BC1616, #AA1414);
+        background-image: -ms-linear-gradient(top,#AA1414, #BC1616, #ce0404, #BC1616, #AA1414);
+        background-image: -o-linear-gradient(top, #AA1414, #BC1616, #ce0404, #BC1616, #AA1414);
+        background-image: linear-gradient(to bottom, #AA1414, #BC1616, #ce0404, #BC1616, #AA1414);
+        -webkit-border-radius: 15;
+        -moz-border-radius: 15;
+        border-radius: 15px;
+        font-family: Courier New;
+        color: white;
+        letter-spacing:2px;
+        font-size: 24px;
+        padding:10px;
+        border: solid #b80000 2px;
+        text-decoration: none;
     }
 
-
-
-
+    button.submit:hover {
+        background: #850c0c;
+        text-decoration: none;
+    }
 }
 @media print {
     body {
