@@ -1,15 +1,24 @@
 @media screen {
     p#silence {
         font-style:italic;
-    }
+        font-weight:bold;
+        margin:50px 20%;
+    
+        text-align: center;
+}
     body {
 
         font-family:Courier new, monospace;
     }
-    div.opening, div.closing {
+    div.opening {
         background-color: white;
-        padding:25px 100px 50px;
+        padding:25px 100px 0px;
     }
+    
+    div.closing {
+        padding:0px 100px;
+    }
+    
     .column {
         width:450px;
         height:750px;
@@ -67,6 +76,12 @@
 }
 @media print {
     body {
-        font:12pt Courier new, serif;
+        font:12pt Arial, serif;
+    }
+    h2 {
+        text-align:center;
+    }
+    p#silence {
+        text-align:center;
     }
 }
