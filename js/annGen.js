@@ -7,13 +7,13 @@ $(function () {
 	r.filter(".refNotes.yes").on('click', function() {
 		$(".refNotesIncl").fadeIn('fast');
 		});
-	$("input[type=radio]").filter(".refNotes.no").on('click', function() {
+	r.filter(".refNotes.no").on('click', function() {
 		$(".refNotesIncl").fadeOut('fast');
 		});
-	$("input[type=radio]").filter(".a.yes").on('click', function() {
+	r.filter(".a.yes").on('click', function() {
 		$(".refNotesLoc").fadeIn('fast');
 		});
-	$("input[type=radio]").filter(".refNotesIncl.no").on('click', function() {
+	r.filter(".refNotesIncl.no").on('click', function() {
 		$(".refNotesLoc").fadeOut('fast');
 		});
 
@@ -22,6 +22,14 @@ $(function () {
         $(".right").css("display", "inline");
         $(".right").show("slide", { direction: "left" }, 'slow');
     });
+    function spellOut(name) {
+        var authorSpelled = "";
+        name = name.toString();
+        for(var j=0; j<(name.length-1); j++){
+            authorSpelled += name.charAt(j).toUpperCase() + "-";
+        }
+        authorSpelled += name.charAt(name.length-1).toUpperCase() + "  ";
+    };
 	$(".submit").on('click', function() {
 
         var outputs = {
@@ -43,17 +51,7 @@ $(function () {
             level: $(".level option").filter(":selected").val(),
             refNotes: $("input[name=notes]").filter(":checked").val(),
             refNotesIncl: $("input[name=notes2]").filter(":checked").val(),
-            refNotesLoc: $(".refNotesLoc option").filter(":selected").val(),
-            spellOutName: function spellOut(name) {
-                var authorSpelled = "";
-            name = name.toString();
-            for(var j=0; j<(name.length-1); j++){
-                authorSpelled += name.charAt(j).toUpperCase() + "-";
-            }
-            authorSpelled += name.charAt(name.length-1).toUpperCase() + "  ";
-        },
-
-
+            refNotesLoc: $(".refNotesLoc option").filter(":selected").val()
         };
     $("input[type=checkbox]:checked").each(function() {
         outputs.navMarkers.push($(this).val());
@@ -84,5 +82,4 @@ $(function () {
         var theTemplate = Handlebars.compile(theTemplateScript);
         $(document.body).append(theTemplate(outputs));
     });
-
 });

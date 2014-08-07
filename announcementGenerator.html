@@ -91,34 +91,32 @@
         <script src="js/handlebars.js"></script>
         <script src=js/annGen.js></script>
         <script id="myTemplate" type="text/x-handlebars-template">
-		<div id="output">
-				<h2>Announcement Sheet</h2>
-            <div class=opening>
-				<p class="title DBC">{{title}}</p>
-				<p class=author>{{authorFirst}} {{authorLast}}</p>
-				<p class=copyright>{{copyrightYear}} by {{copyrightHolder}}</p>
-				<p class=narrator>{{narrator}}</p>
-				<p class=producer>Produced by Nevada Talking Book Services, NV1A</p>
-				<p class=pages>This book contains <span>{{pages}}</span> pages.</p>
-				<p class=readingTime>Approximate reading time: <span>{{hours}} hours and {{minutes}} minutes</span></p>
-				<p class=markers>This book contains markers allowing direct access to the <span>{{navMarkers}}</span> chapters at <span>{{level}}</span>.</p>
-				<p class=ToC>If you would like to skip over any remaining announcements or introductory material, 
-				place your player in fast-forward until a beep is heard.  Stop at that point <span>to hear the table of contents, 
-				or at the 2nd  beep</span> to locate the beginning of the book.</p>  
-				<p class="reference none">The reference notes found in the print edition are not included in this recording.</p>
-                <p class="reference incl">The reference notes found in the print edition have been grouped together in this recording and read <span>{{refNotesLoc}}</span>.</p>
-                <p id="silence">--------------record 5 seconds of silence--------------</p>
-			</div><!--end opening-->
-    	<div class=closing>
-			</div><!--end opening-->
-    	    <div class=closing>
-				<p class=endof>End of {{title}} by {{authorFirst}} {{authorLast}}, {{authorSpelled}}.</p>
-				<p class=narrator>Narrated by {{narrator}}</p>
-				<p class=reviewer>Reviewed by {{reviewer}}</p>
-				<p>Further reproduction or distribution in other than a specialized format is prohibited.<br>
-				 If you found this book to be defective, please contact Nevada Talking Book Services.
-				</p>
-		    </div><!--end closing-->
-		</div><!--end output-->
+            <div id="output">
+                    <h2>Announcement Sheet</h2>
+                <div class=opening>
+                    <p class="title DBC">{{title}}</p>
+                    <p class=author>By {{authorFirst}} {{authorLast}}</p>
+                    <p class=copyright>Copyright {{copyrightYear}} by {{copyrightHolder}}</p>
+                    <p class=narrator>Narrated by {{narratorFirst}} {{narratorLast}}</p>
+                    <p class=producer>Produced by Nevada Talking Book Services, NV1A</p>
+                    <p class=pages>This book contains <span>{{pages}}</span> pages.</p>
+                    <p class=readingTime>Approximate reading time: <span>{{hours}} hours and {{minutes}} minutes</span></p>
+                    <p class=markers>This book contains markers allowing direct access to the <span>{{navMarkers}}</span> chapters at <span>{{level}}</span>.</p>
+                    <p class=ToC>If you would like to skip over any remaining announcements or introductory material,
+                    place your player in fast-forward until a beep is heard.  Stop at that point <span>to hear the table of contents,
+                    or at the 2nd  beep</span> to locate the beginning of the book.</p>
+                    <p class="reference none">The reference notes found in the print edition are not included in this recording.</p>
+                    <p class="reference incl">The reference notes found in the print edition have been grouped together in this recording and read <span>{{refNotesLoc}}</span>.</p>
+                    <p id="silence">--------------record 5 seconds of silence--------------</p>
+                </div><!--end opening-->
+                <div class=closing>
+                    <p class=endof>End of {{title}} by {{authorFirst}} {{authorLast}}, {{authorSpelled}}.</p>
+                    <p class=narrator>Narrated by {{narratorFirst}} {{narratorLast}}</p>
+                    <p class=reviewer>Reviewed by {{reviewerFirst}} {{reviewerLast}}</p>
+                    <p>Further reproduction or distribution in other than a specialized format is prohibited.<br>
+                     If you found this book to be defective, please contact Nevada Talking Book Services.
+                    </p>
+                </div><!--end closing-->
+            </div><!--end output-->
         </script>
 </body>
