@@ -32,9 +32,6 @@
                         <p>Approximate Reading Time:</p>
                         <input class="hours" type=text placeholder="hours">
                         <input class="minutes" type=text placeholder="minutes">
-                        <p>Does your book contain a Table of Contents?</p>
-                        <input class=ToC type=radio name=ToC value=yes>Yes
-                        <input class=ToC type=radio name=ToC value=no>No
                     </form>
                     <button id="next">NEXT</button>
                 </div><!--end left column-->
@@ -101,16 +98,13 @@
                     <p class=producer>Produced by Nevada Talking Book Services, NV1A</p>
                     <p class=pages>This book contains <span>{{pages}}</span> pages.</p>
                     <p class=readingTime>Approximate reading time: <span>{{hours}} hours and {{minutes}} minutes</span></p>
-                    <p class=markers>This book contains markers allowing direct access to the <span>{{navMarkers}}</span> chapters at <span>{{level}}</span>.</p>
-                    <p class=ToC>If you would like to skip over any remaining announcements or introductory material,
-                    place your player in fast-forward until a beep is heard.  Stop at that point <span>to hear the table of contents,
-                    or at the 2nd  beep</span> to locate the beginning of the book.</p>
+                    <p class=markers>This book contains markers allowing direct access to the <span>{{nMs}}</span> chapters at <span>{{level}}</span>.</p>
                     <p class="reference none">The reference notes found in the print edition are not included in this recording.</p>
                     <p class="reference incl">The reference notes found in the print edition have been grouped together in this recording and read <span>{{refNotesLoc}}</span>.</p>
                     <p id="silence">--------------record 5 seconds of silence--------------</p>
                 </div><!--end opening-->
                 <div class=closing>
-                    <p class=endof>End of {{title}} by {{authorFirst}} {{authorLast}}, {{authorSpelled}}.</p>
+                    <p class=endof>End of {{title}} by {{authorFirst}} {{authorLast}}, {{aS}}.</p>
                     <p class=narrator>Narrated by {{narratorFirst}} {{narratorLast}}</p>
                     <p class=reviewer>Reviewed by {{reviewerFirst}} {{reviewerLast}}</p>
                     <p>Further reproduction or distribution in other than a specialized format is prohibited.<br>
